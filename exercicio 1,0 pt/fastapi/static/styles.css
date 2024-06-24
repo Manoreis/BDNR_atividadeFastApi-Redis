@@ -1,0 +1,73 @@
+/* Estilos para o chat */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    width: 90%; /* Ajusta a largura conforme necessário */
+    max-width: 600px; /* Define uma largura máxima para evitar que o chat fique muito largo */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden; /* Evita que o conteúdo se expanda além da largura definida */
+    position: relative; /* Define a posição relativa para permitir que o pseudo-elemento seja posicionado corretamente */
+    margin-bottom: 40px; /* Espaço entre o chat e o fundo da página */
+}
+
+.chat-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    height: 300px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #f9f9f9;
+}
+
+.chat-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #e6f2ff;
+    border-radius: 5px;
+}
+
+.chat-message:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.chat-container::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: -1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .chat-container {
+        width: 95%;
+    }
+}
